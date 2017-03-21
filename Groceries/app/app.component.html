@@ -1,1 +1,10 @@
-<page-router-outlet></page-router-outlet>
+<page-router-outlet>
+	<StackLayout>
+		<Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
+		<TextField hint="Correo Electronico" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+		<TextField hint="Contraseña" secure="true"></TextField>
+
+		<Button text="Iniciar sesion" class="submit-button"></Button>
+		<Button text="Crear una cuenta"></Button>
+	</StackLayout>
+</page-router-outlet>
