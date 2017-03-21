@@ -1,10 +1,10 @@
 <page-router-outlet>
 	<StackLayout>
 		<Image src="res://logo_login" stretch="none" horizontalAlignment="center"></Image>
-		<TextField hint="Correo Electronico" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
+		<TextField hint="Correo Electronico" [(ngModel)]="email" keyboardType="email" autocorrect="false" autocapitalizationType="none"></TextField>
 		<TextField hint="Contraseña" secure="true"></TextField>
 
-		<Button text="Iniciar sesion" class="submit-button"></Button>
-		<Button text="Crear una cuenta"></Button>
+		<Button [text]="isLoggingIn ? 'Iniciar sesion' : 'Crear una cuenta'" class="submit-button" (tap)="submit()"></Button>
+		<Button [text]="isLoggingIn ? 'Crear una cuenta' : 'Iniciar sesion'" (tap)="toggleDisplay()"></Button>
 	</StackLayout>
 </page-router-outlet>
