@@ -5,6 +5,7 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app.routing";
+
 import { AppComponent } from "./app.component";
 
 import { ItemService } from "./item/item.service";
