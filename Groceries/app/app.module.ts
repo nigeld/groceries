@@ -1,6 +1,9 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
@@ -15,7 +18,8 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptFormsModule 
+        NativeScriptFormsModule,
+        NativeScriptHttpModule
     ],
     declarations: [
         AppComponent,
