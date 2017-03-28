@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { User } from "../shared/user/user";
 import { UserService } from "../shared/services/user.service";
@@ -6,8 +6,8 @@ import { UserService } from "../shared/services/user.service";
 @Component({
     selector: "ns-login",
     templateUrl: "login.component.html",
-    providers: [UserService],
-    styleUrls: ["login/login-common.css", "login/login.css"]
+    moduleId: module.id,
+    styleUrls: ["./login-common.css", "./login.css"]
 })
 export class LoginComponent { 
 	user : User;
@@ -18,6 +18,10 @@ export class LoginComponent {
 		this.user.email = "nigel@nd.com";
 		this.user.password = "12345678";
 	}
+
+	ngOnInit(): void {
+      
+    }
 
 	submit() {
 	  if (this.isLoggingIn){

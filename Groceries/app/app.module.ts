@@ -14,6 +14,8 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 
 import { LoginComponent } from "./login/login.component";
 
+import { UserService } from "./shared/services/user.service";
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -31,7 +33,8 @@ import { LoginComponent } from "./login/login.component";
         LoginComponent
     ],
     providers: [
-        ItemService
+        ItemService,
+        UserService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
