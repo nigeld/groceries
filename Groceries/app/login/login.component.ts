@@ -5,25 +5,28 @@ import { UserService } from "../shared/services/user.service";
 
 import { Router } from "@angular/router";
 
+import { Page } from "ui/page";
+
 @Component({
     selector: "ns-login",
     templateUrl: "login.component.html",
     moduleId: module.id,
     styleUrls: ["./login-common.css", "./login.css"]
 })
-export class LoginComponent { 
+export class LoginComponent implements OnInit { 
 	user : User;
 	isLoggingIn = true;
 
-	constructor(private router: Router, private userService: UserService){
+	constructor(private router: Router, private userService: UserService, private page: Page){
 		this.user = new User;
 		this.user.email = "nigel@un.com";
 		this.user.password = "12345678";
 	}
 
-	ngOnInit(): void {
-      
-    }
+	ngOnInit() {
+		this.page.actionBarHidden = true;
+		this.page.backgroundImage = "res://bg_login";
+	}
 
 	submit() {
 	  if (this.isLoggingIn){
