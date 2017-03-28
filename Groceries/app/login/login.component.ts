@@ -3,6 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { User } from "../shared/user/user";
 import { UserService } from "../shared/services/user.service";
 
+import { Router } from "@angular/router";
+
 @Component({
     selector: "ns-login",
     templateUrl: "login.component.html",
@@ -13,9 +15,9 @@ export class LoginComponent {
 	user : User;
 	isLoggingIn = true;
 
-	constructor(private userService : UserService){
+	constructor(private router: Router, private userService: UserService){
 		this.user = new User;
-		this.user.email = "nigel@nd.com";
+		this.user.email = "nigel@un.com";
 		this.user.password = "12345678";
 	}
 
@@ -31,8 +33,12 @@ export class LoginComponent {
 	  }
 	}
 
-	login(){
-
+	login() {
+		this.userService.login(this.user)
+			.subscribe(
+				() => this.router.navigate(["/items"]),
+				(error) => alert("Unfortunately we could not find your account.")
+			);
 	}
 
 	signUp() {
