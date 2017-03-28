@@ -12,6 +12,8 @@ import { ItemService } from "./item/item.service";
 import { ItemsComponent } from "./item/items.component";
 import { ItemDetailComponent } from "./item/item-detail.component";
 
+import { LoginComponent } from "./login/login.component";
+
 @NgModule({
     bootstrap: [
         AppComponent
@@ -25,7 +27,8 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     declarations: [
         AppComponent,
         ItemsComponent,
-        ItemDetailComponent
+        ItemDetailComponent,
+        LoginComponent
     ],
     providers: [
         ItemService
